@@ -12,14 +12,16 @@ import MemoCreateScreen from './src/screens/MemoCreateScreen';
 import LoginScreens from './src/screens/LoginScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 
+// 関連するコードはまとめる
 import { firebaseConfig } from './env';
 
-const Stack = createStackNavigator();
+require('firebase/firestore');
 
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
 
+const Stack = createStackNavigator();
 // 変数が定義される前に使用されている。
 export default function App() {
   return (
